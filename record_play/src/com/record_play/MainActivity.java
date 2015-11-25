@@ -35,7 +35,7 @@ public class MainActivity extends Activity {
     private MediaRecorder mRecorder = null;  
     /** Called when the activity is first created. */  
     @Override  
-    public void onCreate(Bundle savedInstanceState) {  
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);  
         setContentView(R.layout.activity_main);  
           
@@ -63,28 +63,28 @@ public class MainActivity extends Activity {
           
         //设置sdcard的路径  
         FileName = Environment.getExternalStorageDirectory().getAbsolutePath();  
-        FileName += "/audiorecordtest.3gp";  
-    }  
+        FileName += "/audiorecordtest.3gp"; 
+    }
     //开始录音  
-    class startRecordListener implements OnClickListener{  
+    class startRecordListener implements OnClickListener{
   
         @Override  
-        public void onClick(View v) {  
+        public void onClick(View v) {
             // TODO Auto-generated method stub  
              mRecorder = new MediaRecorder();  
              mRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);  
              mRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);  
              mRecorder.setOutputFile(FileName);  
              mRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);  
-             try {  
+             try {
                  mRecorder.prepare();  
-             } catch (IOException e) {  
+             } catch (IOException e) {
                  Log.e(LOG_TAG, "prepare() failed");  
              }  
              mRecorder.start();  
-        }  
+        }
           
-    }  
+    }
     //停止录音  
     class stopRecordListener implements OnClickListener{  
   
@@ -92,11 +92,11 @@ public class MainActivity extends Activity {
         public void onClick(View v) {  
             // TODO Auto-generated method stub  
              mRecorder.stop();  
-             mRecorder.release();  
-             mRecorder = null;  
-        }  
+             mRecorder.release();
+             mRecorder = null;
+        }
           
-    }  
+    }
     //播放录音  
     class startPlayListener implements OnClickListener{  
   
@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
             }  
         }  
           
-    }  
+    }
     //停止播放录音  
     class stopPlayListener implements OnClickListener{  
   
@@ -122,7 +122,7 @@ public class MainActivity extends Activity {
             // TODO Auto-generated method stub  
             mPlayer.release();  
             mPlayer = null;  
-        }  
+        }
           
-    }  
-}  
+    } 
+}

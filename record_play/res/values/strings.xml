@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">record_play</string>
+    <string name="app_name">录音机</string>
     <string name="hello_world">Hello world!</string>
     
     <string name="startRecord">开始录音</string>  
