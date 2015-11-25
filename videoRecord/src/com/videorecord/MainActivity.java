@@ -70,19 +70,21 @@ import android.widget.Button;
 	            if (v == start) {  
 	                mediarecorder = new MediaRecorder();// 创建mediarecorder对象  
 	                // 设置录制视频源为Camera(相机)  
-	                mediarecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);  
+	               mediarecorder.setVideoSource(MediaRecorder.VideoSource.CAMERA);  
+	                mediarecorder.setAudioSource(MediaRecorder.AudioSource.MIC);  
 	                // 设置录制完成后视频的封装格式THREE_GPP为3gp.MPEG_4为mp4  
-	                mediarecorder  
-	                        .setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);  
+	                mediarecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);  
+	               //mediarecorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);  
 	                // 设置录制的视频编码h263 h264  
 	                mediarecorder.setVideoEncoder(MediaRecorder.VideoEncoder.H264);  
+	                mediarecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AAC); 
 	                // 设置视频录制的分辨率。必须放在设置编码和格式的后面，否则报错  
-	                mediarecorder.setVideoSize(176, 144);  
+	                mediarecorder.setVideoSize(640, 480);  
 	                // 设置录制的视频帧率。必须放在设置编码和格式的后面，否则报错  
 	                mediarecorder.setVideoFrameRate(10);  
 	                mediarecorder.setPreviewDisplay(surfaceHolder.getSurface());  
 	                // 设置视频文件输出的路径  
-	                mediarecorder.setOutputFile("/sdcard/love.3gp");  
+	                mediarecorder.setOutputFile("/sdcard/love.mp4");  
 	                try {  
 	                    // 准备录制  
 	                    mediarecorder.prepare();  
