@@ -4,31 +4,34 @@
     android:layout_height="match_parent"
     tools:context="${relativePackage}.${activityClass}" >
 
-        <Button   
-        android:id="@+id/startRecord"  
-        android:layout_width="fill_parent"  
-        android:layout_height="wrap_content"  
-      />
+        <Button
+            android:id="@+id/startRecord"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="开始录音" />
 
     <Button
         android:id="@+id/stopRecord"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/startRecord" />
+        android:layout_below="@+id/startRecord"
+        android:text="结束录音" />
 
     <Button
         android:id="@+id/startPlay"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/stopRecord" />
+        android:layout_below="@+id/stopRecord"
+        android:text="开始播放" />
 
     <Button
         android:id="@+id/stopPlay"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/startPlay" />
+        android:layout_below="@+id/startPlay"
+        android:text="结束播放2" />
 
 </RelativeLayout>
