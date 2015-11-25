@@ -3,15 +3,15 @@ package com.videorecord;
 import android.app.Activity;
 
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+//import android.view.Menu;
+//import android.view.MenuItem;
 import java.io.IOException;  
 
 
 import android.content.pm.ActivityInfo;  
 import android.graphics.PixelFormat;  
 import android.media.MediaRecorder;  
-import android.os.Bundle;  
+//import android.os.Bundle;  
 import android.view.SurfaceHolder;  
 import android.view.SurfaceView;  
 import android.view.View;  
