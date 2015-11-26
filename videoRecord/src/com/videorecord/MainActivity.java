@@ -88,8 +88,7 @@ import android.text.format.DateFormat;
 	                // 设置录制的视频帧率。必须放在设置编码和格式的后面，否则报错  
 	                mediarecorder.setVideoFrameRate(10);  
 	                mediarecorder.setPreviewDisplay(surfaceHolder.getSurface());  
-	                // 设置视频文件输出的路径  
-	                
+	                // 设置视频文件输出的路径  	                
 	                String fname = DateFormat.format("yyyyMMdd_hhmmss", new Date()).toString()+".mp4";  	                
 	                video = new File(Environment.getExternalStorageDirectory()+"/"+fname);  	                  
 	                mediarecorder.setOutputFile(video.getPath());  
