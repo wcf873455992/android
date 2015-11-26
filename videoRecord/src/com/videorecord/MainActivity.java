@@ -3,10 +3,12 @@ package com.videorecord;
 import android.app.Activity;
 
 import android.os.Bundle;
+import android.os.Environment;  
 //import android.view.Menu;
 //import android.view.MenuItem;
 import java.io.IOException;  
-
+import java.util.Date; 
+import java.io.File;  
 
 import android.content.pm.ActivityInfo;  
 import android.graphics.PixelFormat;  
@@ -20,6 +22,7 @@ import android.view.Window;
 import android.view.WindowManager;  
 import android.widget.Button;  
 
+import android.text.format.DateFormat; 
 
 /*public class MainActivity extends Activity {
 
@@ -37,6 +40,8 @@ import android.widget.Button;
 	    // 用来显示视频的一个接口，我靠不用还不行，也就是说用mediarecorder录制视频还得给个界面看  
 	    // 想偷偷录视频的同学可以考虑别的办法。。嗯需要实现这个接口的Callback接口  
 	    private SurfaceHolder surfaceHolder;  
+	    
+	    private File video; 
 	  
 	    public void onCreate(Bundle savedInstanceState) {  
 	        super.onCreate(savedInstanceState);  
@@ -84,7 +89,10 @@ import android.widget.Button;
 	                mediarecorder.setVideoFrameRate(10);  
 	                mediarecorder.setPreviewDisplay(surfaceHolder.getSurface());  
 	                // 设置视频文件输出的路径  
-	                mediarecorder.setOutputFile("/sdcard/love.mp4");  
+	                
+	                String fname = DateFormat.format("yyyyMMdd_hhmmss", new Date()).toString()+".mp4";  	                
+	                video = new File(Environment.getExternalStorageDirectory()+"/"+fname);  	                  
+	                mediarecorder.setOutputFile(video.getPath());  
 	                try {  
 	                    // 准备录制  
 	                    mediarecorder.prepare();  
